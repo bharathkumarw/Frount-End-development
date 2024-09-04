@@ -1,0 +1,19 @@
+<html>
+<body>
+<div id="division" style="width:500px height:500px border:1px solid" ondragover="allowdrop(event)" ondrop="drop(event)"/>
+<img id="image" src="coffee.jpeg" alt="drag n drop" ondragstart="drag(event)" draggable="true"/>
+<script>
+function drag(ev){
+ev.dataTransfer.setData("taxt/html",ev.target.id);
+}
+function allowdrop(ev){
+ev.preventDefault();
+}
+function drop(ev){
+ev.preventDefault();
+var data=ev.dataTransfer.getData("text/html");
+ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</body>
+</html>
