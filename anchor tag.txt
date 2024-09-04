@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Anchor Tag Examples</title>
+</head>
+<body>
+    <h1>Anchor Tag Examples</h1>
+
+    <!-- a. Creating a web link that opens in a new window -->
+    <p><a href="https://www.example.com" target="_blank">Open in New Window</a></p>
+
+    <!-- b. Creating a web link that opens in the same window -->
+    <p><a href="https://www.example.com">Open in Same Window</a></p>
+
+    <!-- c. Reference within the same HTML document (jump to a section) -->
+    <p><a href="#section2">Jump to Section 2</a></p>
+    <h2 id="section2">Section 2</h2>
+    <p>This is the content of Section 2.</p>
+
+    <!-- d. Reference to some image -->
+    <p><a href="image.jpg">View Image</a></p>
+
+    <!-- e. Mailing an image as a hyperlink (mailto link with an image as an attachment) -->
+    <p><a href="mailto:recipient@example.com?subject=Check%20This%20Image&amp;body=Please%20see%20the%20attached%20image."><img src="image.jpg" alt="Image Link"></a></p>
+
+</body>
+</html>

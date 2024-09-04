@@ -1,0 +1,25 @@
+<html>
+<body>
+<p id="result"></p>
+<button onClick="update()">click me</button>
+<script>
+function update(){
+if(typeof(storage!="undefined"))
+{
+if(localStorage.count)
+{
+localStorage.count=Number(localStorage.count)+1;
+}
+else
+{
+localStorage.count=1;
+}
+document.getElementById("result").innerhtml="you have clicked"+localStorage.count+"times";
+}
+else
+}
+document.getElementById("result").innerhtml="your browser does not works";
+}
+</script>
+</body>
+</html>

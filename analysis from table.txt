@@ -1,0 +1,32 @@
+import pandas as pd
+from textblob import TextBlob
+import matplotlib.pyplot as plt
+import numpy as np
+import psycopg2
+
+
+db_params = {
+    'host': 'your_database_host',
+    'database': 'your_database_name',
+    'user': 'your_username',
+    'password': 'your_password',
+}
+sql_query = "SELECT comment, rating FROM feedback_data;"
+   
+connection = psycopg2.connect(**db_params)
+    
+    
+df = pd.read_sql_query(sql_query, connection)
+
+df["sentiment"] = df["comment"].apply(lambda x: TextBlob(x).sentiment.polarity)
+df["sentiment_category"] = df["sentiment"].apply(
+    lambda x: "Positive" if x > 0 else "Negative" if x < 0 else "Neutral"
+)
+sentiment_counts = df["sentiment_category"].value_counts()
+plt.bar(sentiment_counts.index, sentiment_counts.values)
+plt.xlabel("Sentiment")
+plt.ylabel("Number of Feedback")
+plt.title("Sentiment Distribution")
+plt.show()
+average_rating = df["rating"].mean()
+print(f"Average Rating: {average_rating:.2f}")

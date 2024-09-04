@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Run Python Code</title>
+</head>
+<body>
+    <button id="runButton">Run Python Code</button>
+
+    <script>
+        var button = document.getElementById('runButton');
+        button.addEventListener('click', function() {
+            fetch('/run-python-code', {
+                method: 'POST'
+            })
+            .then(response => response.text())
+            .then(result => {
+                alert(result);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>

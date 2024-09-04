@@ -1,0 +1,49 @@
+/* styles.css */
+.menu{
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.slideoutmenu {
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially hidden to the left */
+    overflow-x: hidden;
+    transition: 0.3s;
+}
+
+.slideoutmenu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.slideoutmenu li {
+    margin: 10px;
+}
+
+.slideoutmenu a {
+    text-decoration: none;
+    color: white;
+}
+button{
+    position: absolute;
+    top: 10px; /* Adjust the top value to control the vertical position */
+    right: 10px; /* Adjust the right value to control the horizontal position */
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}

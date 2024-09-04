@@ -1,0 +1,30 @@
+<html>
+<body>
+<button onClick="getstring()">getmsg</button>
+<button onClick="compute()">compute</button>
+<script>
+function getstring()
+{
+alert("hiii vvit");
+}
+function compute()
+{
+var w;
+if(typeof(worker)!="undefined")
+{
+w=new worker("worker.js");
+w.onMessage=function(event)
+{
+alert(event.data);
+}
+}
+else
+{
+alert("browser not supported");
+}
+}
+</script>
+</body>
+</html>
+
+

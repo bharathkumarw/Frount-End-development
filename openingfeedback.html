@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Background Image Example</title>
+    <style>
+        #open1{
+            height:50px;
+            width:100px;
+            background-color:black;
+            color:white;
+        }
+        #open2{
+            height:50px;
+            width:100px;
+            background-color:black;
+            color:white;
+        }
+        #open3{
+            height:50px;
+            width:110px;
+            background-color:black;
+            color:white;
+        }
+    </style>
+</head>
+<body style="background-image: url('https://st.depositphotos.com/1826664/5097/i/450/depositphotos_50975555-stock-photo-feedback-with-colourful-comments-symbol.jpg'); background-size: cover;">
+    <button id="open1">givefeedback</button>
+    <button id="open2">analysis</button>
+    <button id="open3">showcomments</button>
+    <script>
+        var button = document.getElementById('open2');
+        button.addEventListener('click', function() {
+            fetch('/run-python-code', {
+                method: 'POST'
+            })
+            .then(response => response.text())
+            .then(result => {
+                alert(result);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+        </script>
+    
+</body>
+</html>

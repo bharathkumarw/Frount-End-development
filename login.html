@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>log in page</title>
+</head>
+<body>
+name:<input type="text" id="user" name="name" value="value"><br><br>
+fathername:<input type="text"id="father" name="name"><br><br>
+mothername:<input type="text" id="mother"name="name"><br><br>
+inter marks:<input type="text"id="marks" name="name"><br><br>
+eamcet rank:<input type="text"id="eamcet" name="name"><br><br>
+age:<input type="text"id="age" name="age"><br><br>
+gender:<select name="gender" id="gender">
+<option value="male">male</option>
+<option value="female">female</option>
+<option value="transgender">transgender</option>
+</select><br><br>
+<button onClick="MyFunction()">button</button>
+<script>
+function MyFunction(){
+var user=document.getElementById("user").value;
+var fathername=document.getElementById("father").value;
+var mothername=document.getElementById("mother").value;
+var intermarks=document.getElementById("marks").value;
+var eamcetrank=document.getElementById("eamcet").value;
+var age=document.getElementById("age").value;
+alert("name is "+user);
+alert("fathername is "+fathername);
+alert("mothername is "+mothername);
+alert("intermarks "+intermarks);
+alert("eamcetrank "+eamcetrank);
+alert("age "+age);
+
+
+}
+</script>
+</body>
+</html>

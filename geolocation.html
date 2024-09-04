@@ -1,0 +1,38 @@
+<html>
+<body>
+<button onClick="getposition()">location</button>
+<p id="p"></p>
+<script>
+function getposition()
+{
+
+
+navigator.geolocations.getCurrentPosition(success,failure);
+}
+
+
+function success(position)
+{
+document.getElementById("p").innerHTML="latitude:"+position.coords.latitude+"longitude:"+position.coords.longitude;
+}
+function failure(error)
+{
+switch(error.code)
+{
+case error.PERMISSION-DENIED:
+alert("permission denied");
+break;
+case error.TIMEOUT:
+alert("timeout");
+break;
+case error.LOCATION_UNAVAILABLE:
+alert("location-unavailable");
+break;
+case error.UNKNOWM_ERROR:
+alert("unknown_error");
+break;
+}
+}
+</script>
+</body>
+</html>
